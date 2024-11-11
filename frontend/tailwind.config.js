@@ -10,6 +10,11 @@ export default {
    			sm: 'calc(var(--radius) - 4px)'
    		},
    		colors: {
+'light-background': '#E6EDF1',   // Light background
+        'dark-blue': '#27374D',           // Dark blue text and navbar background
+        'light-blue': '#9DB2BF',          // Button background and navbar hover
+        'blue-gray': '#526D82',           // Active navbar link color
+        'white': '#E6EDF1',
    			background: 'hsl(var(--background))',
    			foreground: 'hsl(var(--foreground))',
    			card: {
