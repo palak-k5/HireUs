@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 // import getDataUri from "../utils/datauri.js";
 // import cloudinary from "../utils/cloudinary.js";
 
+// Function register  a new user
 export const register = async (req, res) => {
     try {
         const { fullname, email, phoneNumber, password, role } = req.body;
@@ -46,6 +47,7 @@ export const register = async (req, res) => {
         console.log(error);
     }
 }
+// Allow user to login
 export const login = async (req, res) => {
     try {
         const { email, password, role } = req.body;
