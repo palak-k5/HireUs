@@ -10,11 +10,11 @@ export default {
    			sm: 'calc(var(--radius) - 4px)'
    		},
    		colors: {
-'light-background': '#EEEEEE',   // Light background
-        'dark-blue': '#222831',           // Dark blue text and navbar background
-        'light-blue': '#393E46',          // Button background and navbar hover
-        'blue-gray': '#FFD369',           // Active navbar link color
-        'white': '#EEEEEE',
+'light-background': '#DCD7C9',   // Light background
+        'dark-blue': '#2C3639',           // Dark blue text and navbar background
+        'light-blue': '#A27B5C',          // Button background and navbar hover
+        'blue-gray': '#3F4E4F',           // Active navbar link color
+        'white': '#DCD7C9',
    			background: 'hsl(var(--background))',
    			foreground: 'hsl(var(--foreground))',
    			card: {
