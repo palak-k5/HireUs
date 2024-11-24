@@ -159,7 +159,7 @@ export const updateProfile = async (req, res) => {
             email: user.email,
             phoneNumber: user.phoneNumber,
             role: user.role,
-            // profile: user.profile
+            profile: user.profile
         }
 
         return res.status(200).json({
