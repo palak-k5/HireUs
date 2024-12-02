@@ -9,8 +9,10 @@ import axios from 'axios'
 import { USER_API_END_POINT } from '@/components/utils/constant'
 import { setUser } from '@/redux/authSlice'
 import { toast } from 'sonner'
+import PropTypes from 'prop-types';
 
-const UpdateProfileDialog = ({ open, setOpen }) => {
+
+const UpdateProfileDialog = ({open,setOpen }) => {
     const [loading, setLoading] = useState(false);
     const { user } = useSelector(store => store.auth);
 
@@ -152,5 +154,8 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
         </div>
     )
 }
-
+UpdateProfileDialog.propTypes = {
+    open: PropTypes.bool.isRequired, // Validate `open` as a required boolean
+    setOpen: PropTypes.func.isRequired // Validate `setOpen` as a required function
+};
 export default UpdateProfileDialog
