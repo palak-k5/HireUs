@@ -17,8 +17,16 @@ export const register = async (req, res) => {
         };
         const file = req.file;
         const fileUri = getDataUri(file);
-        const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
-
+        try {
+            const cloudResponse = await cloudinary.uploader.upload(fileUri.content, {
+                resource_type: 'raw',
+            });
+            console.log('Uploaded File URL:', cloudResponse.secure_url);
+        } catch (error) {
+            console.error('Error during file upload:', error);
+        }
+        
+        
         const user = await User.findOne({ email });
         if (user) {
             return res.status(400).json({
@@ -91,7 +99,7 @@ export const login = async (req, res) => {
             email: user.email,
             phoneNumber: user.phoneNumber,
             role: user.role,
-            // profile: user.profile
+            profile: user.profile
         }
 
         return res.status(200).cookie("token", token, { maxAge: 1 * 24 * 60 * 60 * 1000, httpsOnly: true, sameSite: 'strict' }).json({
