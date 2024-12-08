@@ -41,16 +41,28 @@ const Navbar = () => {
       <div className="flex items-center  justify-between mx-auto max-w-7xl h-16">
         <div>
           <h1 className="text-2xl font-bold text-white">
-            Hire<span className="text-light-blue">Us</span>
+            <span className="text-light-blue">H</span>ire
           </h1>
         </div>
         <div className="flex items-center gap-10">
-          <ul className="flex font-medium items-center gap-5">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/jobs">Jobs</Link></li>
-            <li><Link to="/browse">Browse</Link></li>
+        <ul className='flex font-medium items-center gap-5'>
+                        {
+                            user && user.role === 'recruiter' ? (
+                                <>
+                                    <li><Link to="/admin/companies">Companies</Link></li>
+                                    <li><Link to="/admin/jobs">Jobs</Link></li>
+                                </>
+                            ) : (
+                                <>
+                                    <li><Link to="/">Home</Link></li>
+                                    <li><Link to="/jobs">Jobs</Link></li>
+                                    <li><Link to="/browse">Browse</Link></li>
+                                </>
+                            )
+                        }
 
-          </ul>
+
+                    </ul>
           {
             !user?
               (
@@ -80,10 +92,15 @@ const Navbar = () => {
     
 </div>
 <div className="flex flex-row items-center text-dark-blue gap-5 m-5">
-    <div className="flex w-fit items-center  cursor-pointer" >
-          
-          <Button className="bg-dark-blue" > <User2/><Link to='/profile'>Profile</Link></Button>
-    </div>
+{
+                                                user && user.role === 'student' && (
+                                                    <div className='flex w-fit items-center gap-2 cursor-pointer'>
+                                                        <User2 />
+                                                        <Button variant="link"> <Link to="/profile">View Profile</Link></Button>
+                                                    </div>
+                                                )
+                                            }
+
     <div className="flex w-fit items-center  cursor-pointer" >
         
           <Button onClick={logoutHandler} className="bg-dark-blue">   <LogOut/>LogOut</Button>
