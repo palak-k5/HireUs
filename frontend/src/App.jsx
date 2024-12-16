@@ -17,10 +17,6 @@ import ProtectedRoute from './components/admin/ProtectedRoute'
 const appRouter=  createBrowserRouter(
   [
     {
-      path:'/Navbar',
-      element:<Navbar/>
-    },
-    {
       path:'/',
       element:<Home/>
     },
