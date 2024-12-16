@@ -5,7 +5,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import {
-  Avatar,
+  Avatar, 
   AvatarImage,
 } from "@/components/ui/avatar"
 import { LogOut, User2 } from "lucide-react";
