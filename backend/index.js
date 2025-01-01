@@ -11,7 +11,7 @@ import path from "path";
 dotenv.config({});
 connectDB();
 const PORT = process.env.PORT || 3000;
-const allowedOrigins = ['http://localhost:5173', 'https://hire-2zit.onrender.com'];
+const allowedOrigins = ['http://localhost:8000', 'https://hire-2zit.onrender.com'];
 
 const app = express();
 const _dirname=path.resolve();
